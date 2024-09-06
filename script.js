@@ -59,5 +59,8 @@ const deleteItem = (id) => {
   const data = JSON.parse(localStorage.getItem("data"));
 
   const result = data.filter((item) => item.id !== id);
-   
+  
+  localStorage.setItem("data", JSON.stringify(result));
+
+  render();
 };
